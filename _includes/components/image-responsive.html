@@ -1,0 +1,6 @@
+{% assign image = include.image %}
+<div class="img-container">
+    <picture>
+        <img class="img-fluid" src="{% include util/url.liquid url=image.url %}" alt="{{ image.alt }}">
+    </picture>
+</div>

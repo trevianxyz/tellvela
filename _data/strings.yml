@@ -1,0 +1,10 @@
+posts:
+  open: "Read More..."
+
+error:
+  notfound:
+    title: "404"
+    description: "Page not found :("
+    message: "The page you are looking for has been moved, or may no longer exist."
+    back: "Homepage"
+  

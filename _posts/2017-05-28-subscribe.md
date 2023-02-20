@@ -1,0 +1,8 @@
+---
+layout: "post"
+title: "Subscribe"
+date: "2017-05-28"
+---
+
+<input type="email" name="EMAIL" placeholder="Your Email" required />
+<input type="submit" value="Subscribe" />

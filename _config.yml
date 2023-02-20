@@ -1,0 +1,32 @@
+name: "Jekyll Template"
+slug: "jekyll-template"
+description: This is a Jekyll template.
+baseurl: ""
+url: "https://trevianxyz.github.io/simple-jekyll-template"
+
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year-:month-:day-:title/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+
+sass:
+  sass_dir: ./assets/css
+  load_paths:
+    - assets/css
+    - node_modules/bootstrap/scss
+
+pwa:
+  sw_src_filepath: assets/js/service-worker.js
+  dest_js_directory: assets/js
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-pwa-plugin

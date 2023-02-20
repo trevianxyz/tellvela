@@ -1,0 +1,23 @@
+# Navbar logo/brand (if no logo is specified, the plaintext
+# name is used instead - only one is needed)
+name: "Template Blog"
+logo:
+  url: "/assets/img/astana-flight.jpg"
+  alt: "Astana flight airplane logo"
+
+# Nav background, ex: dark, light, primary, secondary, ...
+bg-style: "light"
+# Nav content style, either light (for dark text) or dark (for light text)
+navbar-style: "light"
+
+# Navbar links. Active items are highlighted by matching the
+# provided url with the `page.url` variable in Jekyll.
+items:
+  - name: "Home"
+    url: "/"
+  - name: "Upstream Coding"
+    items:
+      - name: "Upstream"
+        url: "https://upstreamcoding.com/"
+      - name: "Downstream"
+        url: "https://upstreamcoding.com/downstream/"

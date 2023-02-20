@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% include components/nav.html %}
+
+{% if page.image %}{% include components/image-responsive.html image=page.image %}{% endif %}
+
+<main role="main" class="py-3 mt-3 flex-shrink-0">
+    <div class="container">
+        {{ content }}
+    </div>
+</main>
+
+{% include components/footer.html %}

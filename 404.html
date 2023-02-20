@@ -1,0 +1,12 @@
+---
+layout: page
+permalink: /404
+title: "Page not found :("
+---
+
+{% assign strings = site.data.strings.error.notfound %}
+
+<h1>{{ strings.title | default: 404 }}</h1>
+<p><strong>{{ strings.description | default: page.title }}</strong></p>
+<p>{{ strings.message | default: 'The requested page could not be found.' }}</p>
+<p><a class="btn btn-primary" href="{{ site.url }}">{{ strings.back | default: 'Homepage' }}</a></p>

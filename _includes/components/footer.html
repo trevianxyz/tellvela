@@ -1,0 +1,12 @@
+{% assign data = site.data.footer %}
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        {% if data.copyright %}
+        {% if data.copyright.url %}
+        <a class="text-muted" href="{{ data.copyright.url }}">{{ data.copyright.name }}</a>
+        {% else %}
+        <span class="text-muted">{{ data.copyright.name }}</span>
+        {% endif %}
+        {% endif %}
+    </div>
+</footer>

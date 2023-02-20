@@ -1,0 +1,13 @@
+{% assign post = include.post %}
+{% assign tags = post.tags | default: post.categories %}
+{% assign tag_colors = site.data.theme.tags.colors %}
+{% if tags.size > 0 %}
+<div class="mb-2">
+    {% for tag in tags %}
+    {% assign tag_color_i = tag.size | modulo: tag_colors.size %}
+    {% assign tag_color = tag_colors[tag_color_i] %}
+    <strong class="d-inline-block" style="color: {{ tag_color }};">{{ tag }}</strong>
+    {% unless forloop.last %}{{ site.data.theme.tags.separator }}{% endunless %}
+    {% endfor %}
+</div>
+{% endif %}

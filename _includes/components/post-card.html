@@ -1,0 +1,13 @@
+{% assign post = include.post %}
+<div class="card box-shadow mt-3">
+    {% if post.image %}{% include components/image-responsive.html image=post.image %}{% endif %}
+    <div class="card-body">
+        {% include components/post-tags.html post=post %}
+        <h3 class="card-title mb-0">{{ post.title }}</h3>
+        <div class="mb-1 text-muted">{{ post.date  | date: '%b %d, %Y' }}</div>
+        {% assign description = post.content | strip_html | truncate: 250 %}
+        {% assign description = post.description | default: description %}
+        <p class="card-text">{{ description }}</p>
+        <a class="card-link" href="{{ post.url }}">{{ site.data.strings.posts.open }}</a>
+    </div>
+</div>

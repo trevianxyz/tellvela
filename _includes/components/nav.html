@@ -1,0 +1,42 @@
+{% assign data = site.data.nav %}
+
+<nav class="navbar navbar-expand-lg navbar-{{ data.navbar-style | default: 'dark' }} bg-{{ data.bg-style | default: 'dark' }}">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="{{ site.url }}">
+        {% assign brand = data.name | default: site.name %}
+        {% if data.logo %}
+        <img src="{% include util/url.liquid url=data.logo.url %}" alt="{{ data.logo.alt | default: brand }}" width="100">
+        {% else %}
+        <span>{{ brand }}</span>
+        {% endif %}
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            {% for item in data.items %}
+            {% if item.items %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{{ item.url | default: '#' }}" id="navbarDropdown{{ forloop.index }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ item.name }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown{{ forloop.index }}">
+                    {% for subitem in item.items %}
+                    <a class="dropdown-item" href="{{ subitem.url }}">{{ subitem.name }}</a>
+                    {% endfor %}
+                </div>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link{% if page.url == item.url %} active{% endif %}" href="{{ item.url }}">{{ item.name }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% comment %} (TODO: search widget / algolia) <form class="form-inline my-2 my-lg-0 d-none">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>{% endcomment %}
+    </div>
+</nav>

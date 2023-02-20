@@ -1,0 +1,63 @@
+# Post Tags
+#
+# Used to display the `tags` or `categories` variable in the front
+# matter of a post. Colors are chosen with a somewhat hacky method of
+# modulating the tag's string length by the number of colors.
+#
+tags:
+  separator: ' &middot; '
+  colors:
+    - "#007849"
+    - "#A239CA"
+    - "#4717F6"
+    - "#6D7993"
+    - "#062F4F"
+    - "#B82601"
+
+# SCSS Variables
+#
+# These can template into the `style.scss` file, generated during
+# the Jekyll build. Bootstrap themes can be overridden in this section.
+#
+# Any variable defined in the `variables:` section is templated directly
+# into the SCSS - meaning that any bootstrap or SCSS variable can be
+# specified here. A non-exhaustive list of some of the variables that
+# can be defined will follow:
+# - primary ($blue)
+# - secondary ($gray-600)
+# - success ($green)
+# - info ($cyan)
+# - warning ($yellow)
+# - danger ($red)
+# - light ($gray-100)
+# - dark ($gray-800)
+# - enable-rounded (true)
+# - enable-shadows (false)
+# - enable-transitions (true)
+# - enable-caret (true)
+# - spacer (1rem)
+# - body-bg (#FFF)
+# - body-color (#212529)
+# - line-height-lg (1.5)
+# - line-height-sm (1.5)
+# - border-width (1px)
+# - box-shadow{-sm, -lg, -inset}
+# - font-family{-sans-serif, -monospace, -base}
+# - headings-font-family (null)
+#
+# A list of all of Bootstrap's themable variables can be found here:
+#   https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
+#
+
+scss:
+  variables:
+    light: "#FFFF99"
+    dark: "#E8AC41"
+    body-bg: "#FFFACD"
+    body-color: "#212529"
+    spacer: "1rem"
+    enable-rounded: false
+    enable-shadows: true
+    enable-transitions: true
+    enable-caret: true
+    

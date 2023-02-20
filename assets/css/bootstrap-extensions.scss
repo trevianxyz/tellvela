@@ -1,0 +1,73 @@
+@import "bootstrap";
+
+/* Footer height (probably only one or two lines of text) */
+$footer-height: 64px;
+
+html {
+    min-height: 100%;
+    position: relative;
+
+    body {
+        margin-bottom: $footer-height;
+    }
+
+    /* Fun sticky footer things */
+    .footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: $footer-height;
+    }
+}
+
+/* Box shadow util class (makes nice box shadows, if enabled) */
+.box-shadow {
+    @if $enable-shadows {
+        box-shadow: $box-shadow-sm;
+    }
+}
+
+/* Responsive image classes */
+%img-container {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container {
+    @extend %img-container;
+    max-height: 40vh;
+
+    &.img-align-top {
+        align-items: flex-start;
+    }
+
+    &.img-align-bottom {
+        align-items: flex-end;
+    }
+}
+
+.img-container-horiz {
+    @extend %img-container;
+
+    &.img-align-start {
+        justify-content: flex-start;
+    }
+
+    &.img-align-end {
+        justify-content: flex-end;
+    }
+}
+
+/* Custom responsive height classes */
+.h-250 {
+    height: 250px; 
+}
+
+@include media-breakpoint-up(md) {
+    .h-md-250 {
+        height: 250px;
+    }
+}
